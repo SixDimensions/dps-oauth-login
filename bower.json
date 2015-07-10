@@ -1,0 +1,23 @@
+{
+  "name": "dps-oauth-login",
+  "main": "dps-oauth-login.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/SixDimensions/dps-oauth-login",
+  "authors": [
+    "Charlie Wagner <charlie.wagner@6dglobal.com>"
+  ],
+  "description": "Javascript library for logging into DPS apps using OAuth authentication with 6D's entitlement server.",
+  "keywords": [
+    "dps",
+    "adobe",
+    "6d"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

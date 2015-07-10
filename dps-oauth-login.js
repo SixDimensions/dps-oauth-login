@@ -2,7 +2,6 @@
 
 /**
 {
-  authURL     : "https://entitlement-server.6dglobalcloud.com",
   redirectURI : "APPURL://oauth", // replace APPURL with the custom url handler prefix for your app
   clientId    : "com.sixd.oauthtest", // the adobe app id for the dps app
   selector    : "#twitter", // which button you want to trigger on click
@@ -10,6 +9,9 @@
 }
 */
 function OAuthLogin(options) {
+  if (typeof options.authUrl === "undefined") {
+    options.authUrl = "https://entitlement-server.6dglobalcloud.com";
+  }
   function errorCallback(error) {
     console.log(error);
   }
