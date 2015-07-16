@@ -16,7 +16,10 @@ function OAuthLogin(options) {
     console.log(error);
   }
   function OAuthReset(callback) {
-    adobeDPS.oauthRedirectService.resetAuthData(callback, callback);
+    function cb() {
+      adobeDPS.oauthRedirectService.resetAuthData(callback, callback);
+    }
+    adobeDPS.oauthRedirectService.stopListening(cb, cb);
   }
   function OAuthClick(event) {
     OAuthReset(function() {
