@@ -18,6 +18,7 @@ var adobeDPS = {
     login: function(username, password, token) {}
   }
 };
+
 describe("OAuthLogin", function() {
   var oauthButton;
 
@@ -30,14 +31,27 @@ describe("OAuthLogin", function() {
   });
   */
   var options = {
-    selector: "selector",
+    selector: "#selector",
     redirectURI: "redirectURI",
     clientId: "clientId",
     service: "service"
   };
   beforeEach(function() {
     oauthButton = new OAuthLogin(options);
-  })
+  });
+  it('should add a click event on construction', function() {
+    var button = document.createElement("button")
+    document.body.appendChild(button);
+    button.id = "selector";
+    
+    oauthButton = new OAuthLogin(options);
+
+    spyOn(oauthButton, 'OAuthClick');
+
+    button.click();
+    expect(oauthButton.OAuthClick).toHaveBeenCalled();
+
+  });
   it('should set the authUrl to production', function() {
     expect(oauthButton.options.authUrl).toEqual('https://entitlement-server.6dglobalcloud.com');
   });

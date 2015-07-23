@@ -68,7 +68,10 @@ function OAuthLogin(options) {
   }
 
   var nodes = document.querySelectorAll(options.selector);
+  var self = this;
   for(var i = 0; i < nodes.length; i++) {
-    nodes[i].addEventListener('click', this.OAuthClick);
+    nodes[i].addEventListener('click', function(e) {
+      self.OAuthClick(e);
+    });
   }
 }
