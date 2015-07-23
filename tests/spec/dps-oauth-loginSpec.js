@@ -22,14 +22,6 @@ var adobeDPS = {
 describe("OAuthLogin", function() {
   var oauthButton;
 
-  /*
-  beforeEach(function() {
-    spyOn(adobeDPS.oauthRedirectService,'startListening').and.callThrough();
-    spyOn(adobeDPS.oauthRedirectService,'stopListening').and.callThrough();
-    spyOn(adobeDPS.oauthRedirectService,'resetAuthData').and.callThrough();
-    spyOn(adobeDPS.oauthRedirectService,'initAuthData').and.callThrough();
-  });
-  */
   var options = {
     selector: "#selector",
     redirectURI: "redirectURI",
