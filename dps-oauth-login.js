@@ -9,6 +9,7 @@
 }
 */
 function OAuthLogin(options) {
+  this.options = options;
   if (typeof options.authUrl === 'undefined') {
     options.authUrl = 'https://entitlement-server.6dglobalcloud.com';
   }
@@ -21,7 +22,7 @@ function OAuthLogin(options) {
     }
     adobeDPS.oauthRedirectService.stopListening(cb, cb);
   }
-  function OAuthClick(event) {
+  this.OAuthClick = function OAuthClick(event) {
     OAuthReset(function() {
       try {
         adobeDPS.oauthRedirectService.initAuthData(
@@ -68,6 +69,6 @@ function OAuthLogin(options) {
 
   var nodes = document.querySelectorAll(options.selector);
   for(var i = 0; i < nodes.length; i++) {
-    nodes[i].addEventListener('click', OAuthClick);
+    nodes[i].addEventListener('click', this.OAuthClick);
   }
 }
