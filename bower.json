@@ -9,6 +9,7 @@
   "description": "Javascript library for logging into DPS apps using OAuth authentication with 6D's entitlement server.",
   "keywords": [
     "dps",
+    "oauth",
     "adobe",
     "6d"
   ],
